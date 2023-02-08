@@ -1,0 +1,72 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka
+  labels:
+    app: kafka
+spec:
+  type: NodePort
+  ports:
+  - name: manager
+    protocol: TCP
+    targetPort: 9000
+    port: 22180
+    nodePort: 32180
+  - name: zookeeper
+    protocol: TCP
+    targetPort: 2181
+    port: 22181
+    nodePort: 32181
+  - name: kafka
+    protocol: TCP
+    targetPort: 9092
+    port: 29092
+    nodePort: 30092
+  selector:
+    component: kafka
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka
+  namespace: default
+  labels:
+    component: kafka
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: kafka
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 20
+  template:
+    metadata:
+      labels:
+        component: kafka
+    spec:
+      containers:
+      - name: kafka
+        image: spotify/kafka
+        imagePullPolicy: Always
+        env:
+        - name: ADVERTISED_HOST
+          value:
+        - name: ADVERTISED_PORT
+          value: "9092"
+        ports:
+        - containerPort: 2181
+        - containerPort: 9092
+      - name: kafka-manager
+        image: kafkamanager/kafka-manager
+        imagePullPolicy: Always
+        env:
+        - name: ZK_HOSTS
+          value: localhost:2181
+        ports:
+        - containerPort: 9000

@@ -1,0 +1,62 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: minio
+  labels:
+    app: minio
+spec:
+  type: NodePort
+  ports:
+  - name: sql
+    protocol: TCP
+    targetPort: 9000
+    port: 29000
+    nodePort: 30900
+  selector:
+    component: minio
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minio
+  namespace: default
+  labels:
+    component: minio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: minio
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 20
+  template:
+    metadata:
+      labels:
+        component: minio
+    spec:
+      containers:
+      - name: minio
+        image: minio/minio
+        args: ["server","/data"]
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 9000
+        env:
+        - name: MINIO_ACCESS_KEY
+          value: root
+        - name: MINIO_SECRET_KEY
+          value: rootroot
+        volumeMounts:
+        - mountPath: /data
+          name: data
+      volumes:
+      - hostPath:
+          path: /data/minio
+          type: ""
+        name: data

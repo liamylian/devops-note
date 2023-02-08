@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+
+  etcd:
+    image: docker.io/bitnami/etcd:3-debian-10
+    restart: always
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+    ports:
+      - 2379:2379
+      - 2380:2380
+    volumes:
+      - /Users/liamylian/Data/etcd:/bitnami/etcd
