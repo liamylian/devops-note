@@ -33,3 +33,9 @@ Windows拉取仓库后，Linux子系统内会遇到^M字符，需要将Windows�
 ```bash
   git config --global core.autocrlf false
 ```
+
+## Windeos忽略文件权限
+
+```bash
+git config core.fileMode false
+```
