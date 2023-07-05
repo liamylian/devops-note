@@ -26,16 +26,22 @@ apt-get update
 
 ```
 network:
-  version: 2
-  renderer: networkd
   ethernets:
-    enp3s0:
-      addresses:
-        - 192.168.5.83/24
-      gateway4: 192.168.5.1
-      nameservers:
-        addresses: [114.114.114.114, 8.8.8.8]
+    enp1s0:
       dhcp4: no
+      addresses:
+        - 192.168.31.80/24
+      routes:
+        - to: default
+          via: 192.168.31.1
+      nameservers:
+        addresses:
+          - 114.114.114.114
+          - 8.8.8.8
+    enp2s0:
+      dhcp4: true
+      optional: true
+  version: 2
 ```
 
 2. 执行`netplan apply`
