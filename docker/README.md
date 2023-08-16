@@ -13,21 +13,24 @@ docker image prune -a -f # 强制，不需要确认
 mkdir -p /etc/docker
 tee /etc/docker/daemon.json <<-'EOF'
 {
-  "registry-mirrors": ["https://6q7knrgw.mirror.aliyuncs.com"]
+  "registry-mirrors": ["https://xxxxx.mirror.aliyuncs.com"]
 }
 EOF
 systemctl daemon-reload
 systemctl restart docker
 ```
 
+
 ```
-mkdir -p /etc/systemd/system/docker.service.d
-tee /etc/systemd/system/docker.service.d/http-proxy.conf <<-'EOF'
-[Service]
-Environment="HTTP_PROXY=socks5://47.97.97.95:9988" "HTTPS_PROXY=socks5://47.97.97.95:9988" "NO_PROXY=localhost,127.0.0.1,6q7knrgw.mirror.aliyuncs.com"
-EOF
-systemctl daemon-reload
-systemctl restart docker
+tee /etc/docker/config.json <<-'EOF'
+{
+    "proxies": {
+          "default": {
+                  "httpProxy":"socks5h://user:password@xxx.com:1080",
+                  "httpsProxy":"socks5h://user:password@xxx.com:1080"
+          }
+    }
+}
 ```
 
 ## 免超级用户
