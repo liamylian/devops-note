@@ -23,7 +23,7 @@ systemctl restart docker
 
 ```
 mkdir -p /etc/systemd/system/docker.service.d
-tee /etc/docker/daemon.json <<-'EOF'
+tee /etc/docker/http-proxy.conf <<-'EOF'
 [Service]
 Environment="HTTP_PROXY=socks5://user:password@abc.com:1080" "HTTPS_PROXY=socks5://user:password@abc.com:1080" "NO_PROXY=localhost,127.0.0.1"
 EOF
