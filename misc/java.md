@@ -1,6 +1,6 @@
 # JAVA
 
-## Maven代理
+## Maven镜像
 
 修改`~/.m2/settings.xml`文件:
 
@@ -18,4 +18,16 @@
         </mirror>
     </mirrors>
 </settings>
+```
+
+## Gradle代理
+
+添加 `~/.gradle` 文件，或修改项目的 `gradle.proerties` 文件：
+
+```
+systemProp.socks.proxyHost=*.*.*.*
+systemProp.socks.proxyPort=9080
+systemProp.socks.proxyUser=
+systemProp.socks.proxyPassword=
+systemProp.socks.nonProxyHosts=*.nonproxyrepos.com|localhost
 ```
