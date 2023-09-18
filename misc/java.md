@@ -20,9 +20,9 @@
 </settings>
 ```
 
-## Gradle代理
+## Gradle 7 代理
 
-添加 `~/.gradle` 文件，或修改项目的 `gradle.proerties` 文件：
+在用户目录 `~` 或项目目录下添加或修改 `gradle.proerties` 文件：
 
 ```
 systemProp.socks.proxyHost=*.*.*.*
@@ -31,3 +31,7 @@ systemProp.socks.proxyUser=
 systemProp.socks.proxyPassword=
 systemProp.socks.nonProxyHosts=*.nonproxyrepos.com|localhost
 ```
+
+## 参考
+
+- [Gradle 7 配置代理](https://docs.gradle.org/7.0/userguide/build_environment.html#sec:accessing_the_web_via_a_proxy)
