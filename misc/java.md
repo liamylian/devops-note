@@ -25,8 +25,8 @@
 在用户目录 `~` 或项目目录下添加或修改 `gradle.proerties` 文件：
 
 ```
-systemProp.socksProxyHost=hk.inspii.com
-systemProp.socksProxyPort=9081
+systemProp.socksProxyHost=
+systemProp.socksProxyPort=
 ```
 
 ## 参考
