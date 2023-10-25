@@ -20,6 +20,28 @@
 </settings>
 ```
 
+## Gradel 镜像
+
+添加或修改 `~/.gradle/init.gradle` 文件：
+
+```
+allprojects {
+    repositories {
+        mavenLocal()
+        maven {
+            url "https://maven.aliyun.com/repository/public"
+        }
+    }
+    buildscript {
+        repositories {
+            maven {
+                 url "https://maven.aliyun.com/repository/public"
+            }
+        }
+    }
+}
+```
+
 ## Gradle 7 代理
 
 在用户目录 `~` 或项目目录下添加或修改 `gradle.proerties` 文件：
