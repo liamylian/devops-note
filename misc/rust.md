@@ -4,9 +4,17 @@
 
 ```
 [source.crates-io]
-registry ="https://github.com/rust-lang/crates.io-index"
-replace-with = 'ustc'
+replace-with = 'rsproxy-sparse'
 
-[source.ustc]
-registry = "http://mirrors.ustc.edu.cn/crates.io-index"
+[source.rsproxy]
+registry = "https://rsproxy.cn/crates.io-index"
+
+[source.rsproxy-sparse]
+registry = "sparse+https://rsproxy.cn/index/"
+
+[registries.rsproxy]
+index = "https://rsproxy.cn/crates.io-index"
+
+[net]
+git-fetch-with-cli = true
 ```
