@@ -1,5 +1,7 @@
 ## 镜像加速
 
+详见： https://rsproxy.cn/
+
 创建或编辑 `~/.cargo/config` 文件：
 
 ```
