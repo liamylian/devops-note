@@ -1,5 +1,7 @@
 # Javascript
 
+详见： http://www.npmmirror.com/
+
 ## NPM代理
 
 ```bash
