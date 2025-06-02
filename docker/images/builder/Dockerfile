@@ -14,8 +14,8 @@ WORKDIR /root
 
 RUN apt-get update && apt-get install -y buildah vim git git-lfs
 
-COPY ./config.sh /config.sh
-COPY ./start.sh /start.sh
+COPY config.sh /config.sh
+COPY start.sh /start.sh
 RUN chmod +x /config.sh
 RUN chmod +x /start.sh
 

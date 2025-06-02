@@ -1,6 +1,8 @@
 # JAVA
 
-## Maven镜像
+## 一、镜像加速
+
+### 1.1 Maven镜像
 
 修改`~/.m2/settings.xml`文件:
 
@@ -20,7 +22,7 @@
 </settings>
 ```
 
-## Gradel 镜像
+### 1.2 Gradel 镜像
 
 添加或修改 `~/.gradle/init.gradle` 文件：
 

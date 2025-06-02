@@ -2,7 +2,7 @@
 
 ## Install
 
-```
+```shell
 # 安装
 wget https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
 # 手动更改 BREW_REPO="https://mirrors.ustc.edu.cn/brew.git"

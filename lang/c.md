@@ -1,4 +1,8 @@
-```
+# C
+
+## 一、C/C++ 开发环境
+
+```shell
 sudo apt update
 sudo apt install -y build-essential # 安装 gcc g++ libc-dev 等
 

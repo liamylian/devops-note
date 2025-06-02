@@ -1,6 +1,6 @@
 # iTerm2
 
-```
+```shell
 # enables color in the terminal bash shell
 export CLICOLOR=1
 

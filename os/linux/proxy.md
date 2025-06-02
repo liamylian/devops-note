@@ -2,7 +2,7 @@
 
 ## 系统代理
 
-```
+```shell
 export PROXY_SERVER=socks5h://xxx.xxx.xxx.xxx:xxxx
 alias proxy="
     export http_proxy=$PROXY_SERVER;
@@ -29,14 +29,15 @@ alias unproxy="
 ```
 
 ## snap代理
-```
+
+```shell
 sudo snap set system proxy.http="socks5://xxx.xxx.xxx.xxx:xxxx"
 sudo snap set system proxy.https="socks5://xxx.xxx.xxx.xxx:xxxx"
 ```
 
 ## proxychians代理
 
-```
+```shell
 git clone github.com/rofl0r/proxychains-ng
 cd proxychains-ng
 ./configure --prefix=/usr --sysconfdir=/etc

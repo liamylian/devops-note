@@ -1,4 +1,6 @@
-## 镜像加速
+# Rust
+
+## 一、镜像加速
 
 详见： https://rsproxy.cn/
 

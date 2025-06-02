@@ -24,7 +24,7 @@ apt-get update
 
 1. 添加文件`etc/netplan/99_config.yaml`:
 
-```
+```yaml
 network:
   ethernets:
     enp1s0:
