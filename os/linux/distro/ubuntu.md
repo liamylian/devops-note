@@ -45,3 +45,20 @@ network:
 ```
 
 2. 执行`netplan apply`
+
+## 向日葵
+
+```
+ubuntu24.04不能安装向日葵​​解决方法​​:
+​​1. 安装依赖库 libgconf-2-4​​
+在 Ubuntu 24.04 中，libgconf-2-4 可能不在默认软件源中，需要手动下载安装：
+# 下载依赖包
+wget http://kr.archive.ubuntu.com/ubuntu/pool/universe/g/gconf/libgconf-2-4_3.2.6-6ubuntu1_amd64.deb
+wget http://kr.archive.ubuntu.com/ubuntu/pool/universe/g/gconf/gconf2-common_3.2.6-6ubuntu1_all.deb
+# 安装依赖
+sudo dpkg -i gconf2-common_3.2.6-6ubuntu1_all.deb
+sudo dpkg -i libgconf-2-4_3.2.6-6ubuntu1_amd64.deb
+​​2. 修复依赖关系​​
+如果安装过程中仍有问题，运行以下命令修复：
+sudo apt --fix-broken install 
+```
