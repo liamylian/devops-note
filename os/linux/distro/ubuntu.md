@@ -62,3 +62,21 @@ sudo dpkg -i libgconf-2-4_3.2.6-6ubuntu1_amd64.deb
 如果安装过程中仍有问题，运行以下命令修复：
 sudo apt --fix-broken install 
 ```
+
+## EasyConnect
+
+[详见](https://blog.csdn.net/weixin_43912621/article/details/135628542)
+
+```
+wget http://kr.archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango-1.0-0_1.40.14-1_amd64.deb
+wget http://kr.archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpangocairo-1.0-0_1.40.14-1_amd64.deb
+wget http://kr.archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpangoft2-1.0-0_1.40.14-1_amd64.deb
+
+tar -xzvf libpango-1.0-0_1.40.14-1_amd64.deb
+tar -xzvf libpangocairo-1.0-0_1.40.14-1_amd64.deb
+tar -xzvf libpangoft2-1.0-0_1.40.14-1_amd64.deb
+
+sudo cp -v libpango-1.0-0_1.40.14-1_amd64/usr/lib/x86_64-linux-gnu/* /usr/share/sangfor/EasyConnect/
+sudo cp -v libpangocairo-1.0-0_1.40.14-1_amd64/usr/lib/x86_64-linux-gnu/* /usr/share/sangfor/EasyConnect/
+sudo cp -v libpangoft2-1.0-0_1.40.14-1_amd64/usr/lib/x86_64-linux-gnu/* /usr/share/sangfor/EasyConnect/
+```
