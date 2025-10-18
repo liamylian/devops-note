@@ -10,10 +10,13 @@ docker image prune -a -f # 强制，不需要确认
 ## 代理
 
 ```
+# https://github.com/DaoCloud/public-image-mirror
 mkdir -p /etc/docker
 tee /etc/docker/daemon.json <<-'EOF'
 {
-  "registry-mirrors": ["https://xxxxx.mirror.aliyuncs.com"]
+  "registry-mirrors": [
+    "https://docker.m.daocloud.io"
+  ]
 }
 EOF
 systemctl daemon-reload
