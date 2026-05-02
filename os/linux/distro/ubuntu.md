@@ -72,16 +72,15 @@ wget http://kr.archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpango-1.0-0_1.4
 wget http://kr.archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpangocairo-1.0-0_1.40.14-1_amd64.deb
 wget http://kr.archive.ubuntu.com/ubuntu/pool/main/p/pango1.0/libpangoft2-1.0-0_1.40.14-1_amd64.deb
 
-tar -xzvf libpango-1.0-0_1.40.14-1_amd64.deb
-tar -xzvf libpangocairo-1.0-0_1.40.14-1_amd64.deb
-tar -xzvf libpangoft2-1.0-0_1.40.14-1_amd64.deb
+dpkg-deb -x libpango-1.0-0_1.40.14-1_amd64.deb ./libpango-1.0-0_1.40.14-1_amd64
+dpkg-deb -x libpangocairo-1.0-0_1.40.14-1_amd64.deb ./libpangocairo-1.0-0_1.40.14-1_amd64
+dpkg-deb -x libpangoft2-1.0-0_1.40.14-1_amd64.deb ./libpangoft2-1.0-0_1.40.14-1_amd64
 
 sudo cp -v libpango-1.0-0_1.40.14-1_amd64/usr/lib/x86_64-linux-gnu/* /usr/share/sangfor/EasyConnect/
 sudo cp -v libpangocairo-1.0-0_1.40.14-1_amd64/usr/lib/x86_64-linux-gnu/* /usr/share/sangfor/EasyConnect/
 sudo cp -v libpangoft2-1.0-0_1.40.14-1_amd64/usr/lib/x86_64-linux-gnu/* /usr/share/sangfor/EasyConnect/
 
-sudo apt install libgtk2.0-0
-sudo apt install libdbus-glib-1-2
+sudo apt install iptables libgtk2.0-0 libdbus-glib-1-2
 ```
 
 ## Rime
