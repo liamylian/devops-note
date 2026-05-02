@@ -87,6 +87,8 @@ sudo apt install libdbus-glib-1-2
 ## Rime
 
 ```
+# sudo apt install ibus-libpinyin
+
 sudo apt purge fcitx5
 sudo apt autoremove
 sudo apt install ibus
