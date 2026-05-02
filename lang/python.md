@@ -2,7 +2,11 @@
 
 ## Conda
 
+```shell
 vi ~/.condarc
+conda clean -i
+conda config --get channels
+```
 
 ```
 channels:
@@ -14,7 +18,9 @@ show_channel_urls: true
 auto_activate: false
 ```
 
-## 一、Pip 镜像加速
+> 可能没有效果，请在具体的环境中，使用 Pip 方式进行设置。
+
+## Pip 镜像加速
 
 | 镜像源 | 地址                                       | 
 |-----|------------------------------------------|
