@@ -79,4 +79,24 @@ tar -xzvf libpangoft2-1.0-0_1.40.14-1_amd64.deb
 sudo cp -v libpango-1.0-0_1.40.14-1_amd64/usr/lib/x86_64-linux-gnu/* /usr/share/sangfor/EasyConnect/
 sudo cp -v libpangocairo-1.0-0_1.40.14-1_amd64/usr/lib/x86_64-linux-gnu/* /usr/share/sangfor/EasyConnect/
 sudo cp -v libpangoft2-1.0-0_1.40.14-1_amd64/usr/lib/x86_64-linux-gnu/* /usr/share/sangfor/EasyConnect/
+
+sudo apt install libgtk2.0-0
+sudo apt install libdbus-glib-1-2
+```
+
+## Rime
+
+```
+sudo apt purge fcitx5
+sudo apt autoremove
+sudo apt install ibus
+sudo apt install ibus-rime
+```
+
+```yaml
+# $HOME/.config/ibus/rime/default.custom.yaml
+patch:
+  switcher:
+    hotkeys:
+      - "F3"
 ```
