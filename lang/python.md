@@ -1,5 +1,19 @@
 # Python
 
+## Conda
+
+vi ~/.condarc
+
+```
+channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+show_channel_urls: true
+
+auto_activate: false
+```
+
 ## 一、Pip 镜像加速
 
 | 镜像源 | 地址                                       | 
