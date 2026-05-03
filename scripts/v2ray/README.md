@@ -3,6 +3,27 @@
 
 [fhs-install-v2ray](https://github.com/v2fly/fhs-install-v2ray)
 
+```shell
+openssl req -x509 -newkey rsa:2048 -nodes \
+  -keyout key.pem \
+  -out cert.pem \
+  -days 3650 \
+  -subj "/CN=*.example.com" \
+  -addext "subjectAltName=DNS:*.example.com"
+
+
+wget https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh
+chmod +x install-release.sh
+./install-release.sh
+
+sudo mv key.pem /usr/local/etc/v2ray/
+sudo mv cert.pem /usr/local/etc/v2ray/
+sudo vi  /usr/local/etc/v2ray/config.json
+
+sudo systemctl enable v2ray
+sudo systemctl restart v2ray
+```
+
 
 ```json
 {
