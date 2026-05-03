@@ -21,13 +21,8 @@ Components: main contrib non-free non-free-firmware
 ```
 sudo apt install gnome-shell-extension-manager
 sudo apt install lm-sensors
-
-# dash-to-dock, transparent-top-bar, freon, screen-rotate
-sudo apt install gnome-shell-extension-appindicator
+sudo apt install gir1.2-gnomedesktop-3.0 libgnome-menu-3-0 gir1.2-gmenu-3.0
 ```
-
-
-2. 执行`netplan apply`
 
 ## 向日葵
 
