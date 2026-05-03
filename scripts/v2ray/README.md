@@ -14,8 +14,10 @@ openssl req -x509 -newkey rsa:2048 -nodes \
 
 wget https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh
 chmod +x install-release.sh
-./install-release.sh
+sudo ./install-release.sh
 
+sudo chown root:root key.pem cert.pem
+sudo chmod a+r key.pem
 sudo mv key.pem /usr/local/etc/v2ray/
 sudo mv cert.pem /usr/local/etc/v2ray/
 sudo vi  /usr/local/etc/v2ray/config.json
@@ -49,8 +51,8 @@ sudo systemctl restart v2ray
                 "security": "tls", 
                 "tlsSettings": {
                     "certificates": [{
-                        "certificateFile": "/usr/local/etc/v2ray/server.crt",
-                        "keyFile": "/usr/local/etc/v2ray/private.key"
+                        "certificateFile": "/usr/local/etc/v2ray/cert.pem",
+                        "keyFile": "/usr/local/etc/v2ray/key.pem"
                     }]
                 },
 		"wsSettings": {
